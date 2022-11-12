@@ -1,0 +1,30 @@
+
+<div class="container">
+    <div class="content-media box">
+        <article class="media pad">
+            <figure class="media-left">
+              <p class="image is-64x64">
+                <img src="./assets/images/doctor.png" alt="image of doctor">
+              </p>
+            </figure>
+            <div class="media-content">
+              <div class="content">
+                <div>
+                  <strong class="title">{{doctor.firstName}} {{doctor.lastName}}, MD</strong> 
+                  <p class="mb-0">{{doctor.specialization}} at {{doctor.medical_center}}</p>
+                  <p>{{doctor.email}}</p>
+                  <p>{{doctor.contact}}</p>
+                  <p>{{doctor.medical_center}}</p>
+                  <p>{{doctor.location}}</p>
+                  <p>Has <strong>{{doctor.years_of_practice}}</strong> years practice experience in {{doctor.specialization}} </p>
+                  
+                </div>
+              </div>
+            </div>
+          </article>
+          <div class="buttons">
+            <button class="button is-info" [routerLink]="['/doctor/edit/', doctor._id]">Edit</button>
+            <button class="button is-danger" (click)="deleteDoctor(doctor._id)">Delete</button>
+          </div>
+    </div>
+  </div>

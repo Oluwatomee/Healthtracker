@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.my-form {
+    width: 50%;
+    background-color: #fff;
+    padding: 2.5rem;
+    margin: 0 auto;
+    box-shadow: 0 5px 4px rgb(0 0 0 / 15%);
+}
+
+
+.frm-heading {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.frm-heading-primary--main {
+    display: block;
+    font-weight: 400;
+}
+
+.u-center-text {
+    text-align: center;
+}
+
+.u-margin-bottom-small {
+    margin-bottom: 1.5rem; 
+}
+  
+  .u-margin-bottom-medium {
+    margin-bottom: 4rem; 
+}
+  
+  .u-margin-bottom-big {
+    margin-bottom: 8rem; 
+}
+  
+  .u-margin-top-big {
+    margin-bottom: 8rem; 
+}
+  
+  .u-margin-top-huge {
+    margin-bottom: 10rem; 
+}
+
+.footer {
+  background-color: #333;
+  color: #f7f7ff;
+  padding: 10rem 0;
+  font-size: 1.4rem;
+}

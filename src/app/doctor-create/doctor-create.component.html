@@ -1,0 +1,58 @@
+
+<!-- <div class="button-row">
+    <a mat-raised-button color="primary"><mat-icon>list</mat-icon></a>
+</div> -->
+<form class="my-form" [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
+    <p class="frm-heading u-margin-bottom-big">Add new doctor Information!</p>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="First Name" formControlName="firstName">
+        <mat-error>
+            <span *ngIf="!doctorForm.get('firstName')?.valid && doctorForm.get('firstName')?.touched">Please enter First Name</span>
+         </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Last Name" formControlName="lastName">
+        <mat-error>
+            <span *ngIf="!doctorForm.get('lastName')?.valid && doctorForm.get('lastName')?.touched">Please enter Last Name</span>
+          </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email Address" formControlName="email">
+        <mat-error>
+            <span *ngIf="!doctorForm.get('email')?.valid && doctorForm.get('email')?.touched">Please enter Email Address</span>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Contact" formControlName="contact">
+        <mat-error>
+            <span *ngIf="!doctorForm.get('contact')?.valid && doctorForm.get('contact')?.touched">Please enter Contact</span>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Specialization" formControlName="specialization">
+        <mat-error>
+            <span *ngIf="!doctorForm.get('specialization')?.valid && doctorForm.get('specialization')?.touched">Please enter Specialization</span>
+          </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Medical Center" formControlName="medical_center">
+        <mat-error>
+            <span *ngIf="!doctorForm.get('medicalCenter')?.valid && doctorForm.get('medicalCenter')?.touched">Please enter Doctor's Medical Center</span> 
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Location" formControlName="location">
+        <mat-error>
+            <span *ngIf="!doctorForm.get('location')?.valid && doctorForm.get('location')?.touched">Please enter Doctor's location</span>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Years Of Practice" formControlName="years_of_practice">
+        <mat-error>
+            <span *ngIf="!doctorForm.get('yearsOfPractice')?.valid && doctorForm.get('yearsOfPractice')?.touched">Please enter years of practice</span>
+        </mat-error>
+    </mat-form-field>
+    <div class="button-row">
+        <button type="submit" [disabled]="!doctorForm.valid" mat-raised-button color="primary">Save</button>
+    </div>
+</form>
