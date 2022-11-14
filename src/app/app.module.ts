@@ -68,7 +68,20 @@ const appRoutes: Routes = [
     path: '',
     redirectTo: '/',
     pathMatch: 'full'
-  },
+  }, 
+  {
+    path: 'addPrescription',  //when students added 
+    component: AddPrescriptionComponent
+  }, 
+  {
+    path: 'listPrescriptions',  //when students listed
+    component: ListPrescriptionsComponent
+  }, 
+  {
+    path: 'editPrescription/:_id', //when students edited 
+    component: AddPrescriptionComponent 
+  }, 
+
   {
     path: '**',  //when path cannot be found
     component: NotFoundComponent
