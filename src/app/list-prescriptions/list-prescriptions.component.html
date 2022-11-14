@@ -1,5 +1,22 @@
+
+<div class="container">
+    <div class="content-media">
+        <div class="box pad">
+            <ul *ngFor ="let prescription of prescriptions let i = index">
+                <li >{{prescription.dName}} {{prescription.strength}} <button mat-button color="accent" [routerLink]="['/editPrescription', prescription._id]">UPDATE</button><button mat-button color="warn" (click)="onDelete(prescription._id)">DELETE</button></li>
+            </ul>
+        </div>
+    </div>
+
+  
+
+    <div class="float">
+        <a href="/addPrescription">+</a>
+     </div>
+
 <div>
     <ul *ngFor ="let prescription of prescriptions let i = index">
         <li > {{prescription._id}}: {{prescription.dName}} {{prescription.strength}} (index {{i}}) <button mat-button color="accent" [routerLink]="['/editPrescription', prescription._id]">UPDATE</button><button mat-button color="warn" (click)="onDelete(prescription._id)">DELETE</button></li>
     </ul>
+
 </div>

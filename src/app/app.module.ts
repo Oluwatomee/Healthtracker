@@ -23,9 +23,10 @@ import { DoctorEditComponent } from './doctor-edit/doctor-edit.component';
 import { AddPrescriptionComponent } from './add-prescription/add-prescription.component';
 import { ListPrescriptionsComponent } from './list-prescriptions/list-prescriptions.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 import { PrescriptionService } from './prescription.service';
 
-const appRoutes: Routes = [
+const appRoutes: Routes = [ 
   {
     path: 'doctors',
     component: DoctorComponent,
@@ -47,8 +48,25 @@ const appRoutes: Routes = [
     data: { title: 'Edit Doctor Info'}
   },
   {
+    path: 'addPrescription',  //when students added 
+    component: AddPrescriptionComponent
+  }, 
+  {
+    path: 'listPrescriptions',  //when students listed
+    component: ListPrescriptionsComponent
+  }, 
+  {
+    path: 'editPrescription/:_id', //when students edited 
+    component: AddPrescriptionComponent 
+  }, 
+  {
     path: '',
-    redirectTo: '/doctors',
+   component: WelcomeComponent,
+   data: { title: 'Home '}
+  },
+  {
+    path: '',
+    redirectTo: '/',
     pathMatch: 'full'
   }, 
   {
@@ -63,6 +81,7 @@ const appRoutes: Routes = [
     path: 'editPrescription/:_id', //when students edited 
     component: AddPrescriptionComponent 
   }, 
+
   {
     path: '**',  //when path cannot be found
     component: NotFoundComponent

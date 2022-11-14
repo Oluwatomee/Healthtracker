@@ -32,10 +32,19 @@ ngOnInit() {
               data => { 
                   //read data and assign to private variable student
                   this.prescription = data;
+
+                  console.log("printing data =>>>>> ", data)
+                  console.log("printing prescritpion  =>>>>> ", this.prescription);
+                  //populate the firstName and lastName on the page
+                  //notice that this is done through the two-way bindings
+                  this.dName = this.prescription.dName;
+                  this.strength = this.prescription.strength;
+
                   //populate the firstName and lastName on the page
                   //notice that this is done through the two-way bindings
                   this.dName = this.prescription.firstName;
                   this.strength = this.prescription.lastName;
+
               },
               err => console.error(err),
               () => console.log('finished loading')
@@ -51,9 +60,18 @@ ngOnInit() {
  
   onSubmit(){
       console.log("You submitted: " + this.dName + " " + this.strength);
+
+      if (this.mode == 'Add') {
+        this._myService.addPrescriptions(this.dName ,this.strength);
+        this.router.navigate(['/listPrescriptions']);
+      }
+     
+      if (this.mode == 'Edit') 
+
       if (this.mode == 'Add')
       this._myService.addPrescriptions(this.dName ,this.strength);
       if (this.mode == 'Edit')
+
       this._myService.updatePrescription(this.id,this.dName ,this.strength);
       this.router.navigate(['/listPrescriptions']);
     }
