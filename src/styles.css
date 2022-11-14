@@ -61,3 +61,35 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   padding: 10rem 0;
   font-size: 1.4rem;
 }
+
+a { 
+  color: #fff;
+}
+
+.float{
+position:fixed;
+width:60px;
+height:60px;
+bottom:40px;
+right:40px;
+background-color:#1976d2;
+color:#FFF;
+border-radius:50px;
+text-align:center;
+box-shadow: 2px 2px 3px #999;
+  font-size: 2rem;
+  padding-top: 1rem;
+}
+
+.my-float{
+margin-top:22px;
+}
+
+.content-media {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.pad {
+  padding: 2rem
+}

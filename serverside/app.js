@@ -4,7 +4,8 @@ require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const apiRoutes = require('./routes/doctor');
+const apiDocRoutes = require('./routes/doctor');
+const apiPriscipRoutes  = require('./routes/prescription')
 
 
 const app = express();
@@ -30,7 +31,8 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use('/api/doctor', apiRoutes)
+app.use('/api/doctor', apiDocRoutes);
+app.use('/', apiPriscipRoutes);
 //catch 404 and forward to error handler
 app.use((req, res, next) => {
     const err = new Error('Not Found');
@@ -50,5 +52,8 @@ app.use((req, res, next) => {
     res.status(err.status || 500);
     res.send(err.status).send(err.message);
 });
+
+
+
 
 module.exports = app;
